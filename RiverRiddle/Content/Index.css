@@ -1,0 +1,40 @@
+﻿body {
+    background-color: #D9BFCC;
+    font-family: 'Courier New';
+    font-weight: bold;
+    color: #270D1D;
+}
+
+h1 {
+    background-color: #472F36;
+    border: 8px solid #E49EBF;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 100px;
+    color: #E9DDE5;
+    font-weight: bold;
+    text-align: center
+}
+h3 {
+    color: #270D1D;
+    font-weight: bold;
+    text-align: center
+}
+body > div {
+    text-align: center;
+}
+.btn {
+    background-color: #472F36;
+    border: 8px solid #E49EBF;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 100px;
+    color: #E9DDE5;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+
