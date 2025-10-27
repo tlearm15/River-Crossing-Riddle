@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Home Page</title>
+    <link rel="stylesheet" href="~/Content/Index.css" />
+</head>
+<body>
+    <div>
+        <h1>River Riddle</h1>
+        <h3>
+            Hello!! Welcome to the River Riddle Game!
+            <br>
+            <br> This is a drawn pixel art game created by Molly & Thomas. We hope you have fun :)
+
+        </h3>
+    </div>
+    <div>
+        <a href='@Url.Action("Index", "Guide")'>
+            <input type="button" value="BEGIN" class="btn btn-lg" />
+        </a>
+    </div>
+</body>
+</html>
