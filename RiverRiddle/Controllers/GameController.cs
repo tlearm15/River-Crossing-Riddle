@@ -9,7 +9,7 @@ namespace RiverRiddle.Controllers
     public class GameController : Controller
     {
         // GET: Game
-        public ActionResult Index()
+        public ActionResult PlayGame()
         {
             return View();
         }

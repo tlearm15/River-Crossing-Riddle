@@ -9,7 +9,7 @@ namespace RiverRiddle.Controllers
     public class GuideController : Controller
     {
         // GET: Guide
-        public ActionResult Index()
+        public ActionResult ViewGuide()
         {
             return View();
         }
