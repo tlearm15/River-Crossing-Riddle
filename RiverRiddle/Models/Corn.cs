@@ -5,7 +5,7 @@ using System.Web;
 
 namespace RiverRiddle.Models
 {
-    public class Corn : Characters
+    public class Corn : Character
     {
         //currently no additional properties or methods needed
     }

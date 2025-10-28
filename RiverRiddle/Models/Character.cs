@@ -5,11 +5,11 @@ using System.Web;
 
 namespace RiverRiddle.Models
 {
-    public abstract class Characters
+    public abstract class Character
     {
 
         public string name { get; set; }
-        public RiverSide riverSide { get; set; }
+        public RiverSide RiverSide { get; set; }
 
 
     }
