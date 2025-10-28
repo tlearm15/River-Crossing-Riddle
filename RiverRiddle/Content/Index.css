@@ -178,7 +178,15 @@ th, td {
     left: 400px;
     transition;
     left 0.8s ease;
-    background-image: url('../Images/boat.png');
+    z-index: 1;
+}
+
+.boat-image {
+    width: 100%;
+    width: 128px;
+    height: 128px;
+    height: auto;
+    display: block;
 }
 
 .boat.east{
@@ -197,4 +205,6 @@ th, td {
     font-size: 16px;
     cursor: pointer;
 }
+
+1
 

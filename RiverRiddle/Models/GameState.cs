@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web.Mvc;
 
 namespace RiverRiddle.Models
 {
@@ -22,6 +23,7 @@ namespace RiverRiddle.Models
             Corn = new Corn { riverSide = RiverSide.West };
         }
 
+
         public void TogglePassenger(string name)
         {
             var passenger = GetCharacterByName(name);
@@ -43,6 +45,7 @@ namespace RiverRiddle.Models
             // Add passenger to boat
             boatPassengers.Add(passenger);
         }
+
 
         public void MoveBoat()
         {

@@ -8,8 +8,16 @@ using Newtonsoft.Json;
 
 namespace RiverRiddle.Controllers
 {
+
+
+
     public class GameController : Controller
     {
+
+        private static readonly JsonSerializerSettings _jsonSettings = new JsonSerializerSettings
+        {
+            TypeNameHandling = TypeNameHandling.All
+        };
 
         private const string SessionKey = "GameState";
 
@@ -23,14 +31,14 @@ namespace RiverRiddle.Controllers
                     SaveGame(newGame);
                     return newGame;
                 }
-                return JsonConvert.DeserializeObject<GameState>(json);
+                return JsonConvert.DeserializeObject<GameState>(json, _jsonSettings);
 
             }
         
 
         private void SaveGame(GameState game)
         {
-            Session[SessionKey] = JsonConvert.SerializeObject(game);
+            Session[SessionKey] = JsonConvert.SerializeObject(game, _jsonSettings);
         }
 
         // GET: Game
@@ -46,7 +54,7 @@ namespace RiverRiddle.Controllers
             var game = LoadGame();
             game.TogglePassenger(name);
             SaveGame(game);
-            return RedirectToAction("PlayGame");
+            return PartialView("_GameBoard",game);
         }
 
         [HttpPost]
@@ -55,7 +63,7 @@ namespace RiverRiddle.Controllers
             var game = LoadGame();
             game.MoveBoat();
             SaveGame(game);
-            return RedirectToAction("PlayGame");
+            return PartialView("_GameBoard", game);
         }
     }
 }

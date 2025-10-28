@@ -4,7 +4,7 @@
 
     <!-- Boat -->
     <div class="boat @(Model.boatSide.ToString().ToLower())">
-
+        <img src="~/Images/boat.png" class="boat-image" alt="boat"/>
         @{
             RiverRiddle.Models.Character[] characters = new RiverRiddle.Models.Character[] { Model.Farmer, Model.Fox, Model.Chicken, Model.Corn };
         }
@@ -20,7 +20,8 @@
 
     </div>
 
-    <button class="boat-btn" onclick="moveBoat()" @(Model.boatPassengers.Contains(Model.Farmer) ? "" : "disabled")> Move Boat </button>
+    <button class="boat-btn" onclick="moveBoat()"
+            @(Model.boatPassengers.Any(p =>p is RiverRiddle.Models.Farmer) ? "" : "disabled")> Move Boat </button>
 
     <!-- West Bank -->
     <div class="bank-west">
