@@ -9,12 +9,22 @@ h1 {
     background-color: #472F36;
     border: 8px solid #E49EBF;
     border-radius: 25px;
-    padding: 10px;
+    padding: 15px;
     margin: 100px;
     color: #E9DDE5;
     font-weight: bold;
     text-align: center;
-    font-size: larger
+    font-size: 50px;
+}
+h2 {
+    background-color: #472F36;
+    border: 8px solid #E49EBF;
+    border-radius: 25px;
+    padding: 15px;
+    color: #E9DDE5;
+    font-weight: bold;
+    text-align: center;
+    font-size: 30px;
 }
 h3 {
     color: #270D1D;
@@ -24,6 +34,7 @@ h3 {
 body > div {
     text-align: center;
 }
+
 .btn {
     background-color: #472F36;
     border: 8px solid #E49EBF;
@@ -38,19 +49,65 @@ body > div {
     cursor: pointer;
     font-size: larger
 }
+table {
+    width: 100%
+}
 
-p {
-    line-height: 30px;
-    font-weight:bold;
-    font-size: larger
+th, td {
+    border: 2px solid #270D1D;
+    background-color: #cca7ba;
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 50%;
+    font-size: larger;
+    font-weight: bold;
+    line-height: 40px;
 }
 
 
-    .divider-table td + td{
-        border-left: 2px solid #270D1D;
-        border-right: 2px solid #270D1D;
-        padding-left: 20px;
-        vertical-align: middle;
-    }
+.game-layout {
+    display: flex;
+    justify-content:center;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 20px;
+}
 
+.left-pannel {
+    width: 400px;
+    height: 600px;
+    background-color: #cca7ba;
+    border: 2px solid #270D1D;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 2px 2px 0 #270D1D;
+    font-size: large;
+    font-weight: bold;
+    line-height: 40px;
+}
+
+.game-box {
+    width: 1500px;
+    height: 600px;
+    background-color: #cca7ba;
+    border: 2px solid #270D1D;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 2px 2px 0 #270D1D;
+    font-size: large;
+    font-weight: bold;
+    line-height: 40px;
+}
+.right-pannel {
+    width: 400px;
+    height: 600px;
+    background-color: #cca7ba;
+    border: 2px solid #270D1D;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 2px 2px 0 #270D1D;
+    font-size: large;
+    font-weight: bold;
+    line-height: 40px;
+}
 
