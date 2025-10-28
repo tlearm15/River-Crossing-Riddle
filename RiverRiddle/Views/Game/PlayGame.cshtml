@@ -1,4 +1,4 @@
-﻿
+﻿@model RiverRiddle.Models.GameState
 @{
     Layout = null;
 }
@@ -9,9 +9,37 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>PlayGame</title>
+    <link rel="stylesheet" href="~/Content/Index.css" />
 </head>
 <body>
-    <div> 
+    <div>
+        <h2>River Riddle</h2>
+    </div>
+    <div class="game-layout">
+        <section class="left-pannel">
+            <p>
+                1. Only the Farmer can row
+                <br>2. The Boat can carry TWO things, including the rower, at any one time
+                <br>3. If the Fox is left alone with the Chicken, the Fox will eat the Chicken
+                <br>4. If the Chicken is left alone with the Corn, the Chicken will eat the Corn
+            </p>
+        </section>
+        <section class="game-box">
+        </section>
+
+        <section class="right-pannel">
+            <p>
+                Click on the Character/Item you want to put on the Boat
+                <br>To remove Characters/Item of the Boat click on said Character/Item
+                <br>When you are happy with your choice click the Confirm Button
+                <br>This will send the Character(s)/Item across the River
+            </p>
+        </section>
+        <section>
+
+
+        </section>
+
     </div>
 </body>
 </html>
