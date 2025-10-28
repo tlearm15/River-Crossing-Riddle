@@ -69,8 +69,16 @@ th, td {
     display: flex;
     justify-content:center;
     align-items: flex-start;
-    gap: 20px;
+    gap: 40px;
     margin-top: 20px;
+}
+
+.middle-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-items: center;
+    gap: 40px;
 }
 
 .left-pannel {
@@ -83,21 +91,30 @@ th, td {
     box-shadow: 2px 2px 0 #270D1D;
     font-size: large;
     font-weight: bold;
-    line-height: 40px;
+    line-height: 30px;
 }
 
 .game-box {
-    width: 1500px;
+    width: 1200px;
     height: 600px;
     background-color: #cca7ba;
     border: 2px solid #270D1D;
     border-radius: 12px;
-    padding: 10px;
+    box-shadow: 2px 2px 0 #270D1D;
+}
+
+
+.status-box {
+    width: 1200px;
+    height: 50px;
+    background-color: #cca7ba;
+    border: 2px solid #270D1D;
+    border-radius: 12px;
     box-shadow: 2px 2px 0 #270D1D;
     font-size: large;
     font-weight: bold;
-    line-height: 40px;
 }
+
 .right-pannel {
     width: 400px;
     height: 600px;
@@ -108,6 +125,6 @@ th, td {
     box-shadow: 2px 2px 0 #270D1D;
     font-size: large;
     font-weight: bold;
-    line-height: 40px;
+    line-height: 30px;
 }
 
