@@ -98,6 +98,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Characters.cs" />
+    <Compile Include="Models\Chicken.cs" />
+    <Compile Include="Models\Corn.cs" />
+    <Compile Include="Models\Enums.cs" />
+    <Compile Include="Models\Farmer.cs" />
+    <Compile Include="Models\Fox.cs" />
+    <Compile Include="Models\GameState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
