@@ -10,16 +10,16 @@ namespace RiverRiddle.Models
         public Chicken Chicken { get; set; }
         public Corn Corn { get; set; }
 
-        public RiverSide BoatSide { get; set; } = RiverSide.West;
-        public List<Character> BoatPassengers { get; set; } = new List<Character>();
+        public RiverSide boatSide { get; set; } = RiverSide.West;
+        public List<Character> boatPassengers { get; set; } = new List<Character>();
 
         public GameState()
         {
             // initialize characters
-            Farmer = new Farmer { RiverSide = RiverSide.West };
-            Fox = new Fox { RiverSide = RiverSide.West };
-            Chicken = new Chicken { RiverSide = RiverSide.West };
-            Corn = new Corn { RiverSide = RiverSide.West };
+            Farmer = new Farmer { riverSide = RiverSide.West };
+            Fox = new Fox { riverSide = RiverSide.West };
+            Chicken = new Chicken { riverSide = RiverSide.West };
+            Corn = new Corn { riverSide = RiverSide.West };
         }
 
         public void TogglePassenger(string name)
@@ -28,20 +28,43 @@ namespace RiverRiddle.Models
             if (passenger == null) return;
 
             // Remove if already on the boat
-            if (BoatPassengers.Contains(passenger))
+            if (boatPassengers.Contains(passenger))
             {
-                BoatPassengers.Remove(passenger);
+                boatPassengers.Remove(passenger);
                 return;
             }
 
             // Passenger must be on the same side as the boat
-            if (passenger.RiverSide != BoatSide) return;
+            if (passenger.riverSide != boatSide) return;
 
             int maxPassengers = 2; // farmer + 1 other character
-            if (BoatPassengers.Count >= maxPassengers) return;
+            if (boatPassengers.Count >= maxPassengers) return;
 
             // Add passenger to boat
-            BoatPassengers.Add(passenger);
+            boatPassengers.Add(passenger);
+        }
+
+        public void MoveBoat()
+        {
+
+            if (!boatPassengers.Contains(Farmer))
+            {
+                // Farmer must be on the boat to move it
+                return;
+            }
+
+            // Move boat to the other side (flip)
+            boatSide = boatSide == RiverSide.West ? RiverSide.East : RiverSide.West;
+
+            foreach (var passenger in boatPassengers)
+            {
+                // Update each passenger's river side to the new boat side
+                passenger.riverSide = boatSide;
+            }
+
+            // Clear boat passengers after the move
+            boatPassengers.Clear();
+
         }
 
         private Character GetCharacterByName(string name)

@@ -17,7 +17,7 @@ namespace RiverRiddle.Models
         {
             Valid,
             Invalid,
-            Win,
-            Lose
+            Win
+            //Lose
         }
 }

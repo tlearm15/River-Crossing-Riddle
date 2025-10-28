@@ -9,7 +9,7 @@ namespace RiverRiddle.Models
     {
 
         public string name { get; set; }
-        public RiverSide RiverSide { get; set; }
+        public RiverSide riverSide { get; set; }
 
 
     }
