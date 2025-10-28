@@ -44,6 +44,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -90,6 +93,12 @@
   <ItemGroup>
     <Content Include="Content\Index.css" />
     <Content Include="Global.asax" />
+    <Content Include="Images\background.png" />
+    <Content Include="Images\boat.png" />
+    <Content Include="Images\chicken.png" />
+    <Content Include="Images\corn.png" />
+    <Content Include="Images\farmer.png" />
+    <Content Include="Images\fox.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +124,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Guide\ViewGuide.cshtml" />
     <Content Include="Views\Game\PlayGame.cshtml" />
+    <Content Include="Views\Game\_GameBoard.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

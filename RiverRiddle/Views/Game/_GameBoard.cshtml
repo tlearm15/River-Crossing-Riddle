@@ -1,0 +1,57 @@
+﻿@model RiverRiddle.Models.GameState
+
+<div class="river-bg">
+
+    <!-- Boat -->
+    <div class="boat @(Model.boatSide.ToString().ToLower())">
+
+        @{
+            RiverRiddle.Models.Character[] characters = new RiverRiddle.Models.Character[] { Model.Farmer, Model.Fox, Model.Chicken, Model.Corn };
+        }
+
+        @* Boat Passengers *@
+        @foreach (var passenger in Model.boatPassengers)
+        {
+            <img src="~/Images/@(passenger.GetType().Name.ToLower()).png"
+                 class="character"
+                 data-name="@passenger.GetType().Name"
+                 onclick="togglePassenger('@passenger.GetType().Name')" />
+        }
+
+    </div>
+
+    <button class="boat-btn" onclick="moveBoat()" @(Model.boatPassengers.Contains(Model.Farmer) ? "" : "disabled")> Move Boat </button>
+
+    <!-- West Bank -->
+    <div class="bank-west">
+        <div class="characters-row">
+            @foreach (var c in characters)
+            {
+                if (c.riverSide == RiverRiddle.Models.RiverSide.West && !Model.boatPassengers.Contains(c))
+                {
+                    <img src="~/Images/@(c.GetType().Name.ToLower()).png"
+                         class="character"
+                         data-name="@c.GetType().Name"
+                         onclick="togglePassenger('@c.GetType().Name')" />
+                }
+            }
+        </div>
+    </div>
+
+    <!-- East Bank -->
+    <div class="bank-east">
+        <div class="characters-row">
+            @foreach (var c in characters)
+            {
+                if (c.riverSide == RiverRiddle.Models.RiverSide.East && !Model.boatPassengers.Contains(c))
+                {
+                    <img src="~/Images/@(c.GetType().Name.ToLower()).png"
+                         class="character"
+                         data-name="@c.GetType().Name"
+                         onclick="togglePassenger('@c.GetType().Name')" />
+                }
+            }
+        </div>
+    </div>
+
+</div>
