@@ -1,0 +1,24 @@
+name: Auto Approve and Merge PRs
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  approve-and-merge:
+    runs-on: ubuntu-latest
+    if: github.actor == 'Molly266'
+    steps:
+      - uses: actions/checkout@v3
+
+      # Auto-approve the PR
+      - uses: hmarr/auto-approve-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Auto-merge the PR
+      - name: Merge PR
+        uses: peter-evans/enable-pull-request-automerge@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          merge-method: merge
