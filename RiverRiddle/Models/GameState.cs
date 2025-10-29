@@ -56,19 +56,37 @@ namespace RiverRiddle.Models
         public void MoveBoat()
         {
 
-            if (!boatPassengers.Contains(Farmer))
+            if (!boatPassengers.Any(p => p.GetType().Name == "Farmer"))
             {
                 // Farmer must be on the boat to move it
                 return;
             }
 
             // Move boat to the other side (flip)
-            boatSide = boatSide == RiverSide.West ? RiverSide.East : RiverSide.West;
+            //boatSide = boatSide == RiverSide.West ? RiverSide.East : RiverSide.West;
+
+            RiverSide newSide = boatSide == RiverSide.West ? RiverSide.East : RiverSide.West;
+            boatSide = newSide;
 
             foreach (var passenger in boatPassengers)
             {
                 // Update each passenger's river side to the new boat side
-                passenger.riverSide = boatSide;
+                if (passenger is Farmer)
+                {
+                    this.Farmer.riverSide = newSide;
+                }
+                else if (passenger is Fox)
+                {
+                    this.Fox.riverSide = newSide;
+                }
+                else if (passenger is Chicken)
+                {
+                    this.Chicken.riverSide = newSide;
+                }
+                else if (passenger is Corn)
+                {
+                    this.Corn.riverSide = newSide;
+                }
             }
 
             // Clear boat passengers after the move

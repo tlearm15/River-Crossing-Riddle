@@ -8,22 +8,20 @@
         @{
             Character[] characters = new Character[] { Model.Farmer, Model.Fox, Model.Chicken, Model.Corn };
         }
-    <div class="boat-passengers">
-        @* Boat Passengers *@
-        @foreach (var passenger in Model.boatPassengers)
-        {
-            <img src="~/Images/@(passenger.GetType().Name.ToLower()).png"
-                 class="character on-boat"
-                 data-name="@passenger.GetType().Name"
-                 onclick="togglePassenger('@passenger.GetType().Name')" />
-        }
-    </div>
+        <div class="boat-passengers">
+            @* Boat Passengers *@
+            @foreach (var passenger in Model.boatPassengers)
+            {
+                <img src="~/Images/@(passenger.GetType().Name.ToLower()).png"
+                     class="character on-boat"
+                     data-name="@passenger.GetType().Name"
+                     onclick="togglePassenger('@passenger.GetType().Name')" />
+            }
+        </div>
     </div>
 
-    <button class="boat-btn" onclick="moveBoat()"
-            @(Model.boatPassengers.Any(p => p is Farmer) ? "" : "disabled")>
-        Move Boat
-    </button>
+
+    <button class="boat-btn"onclick="moveBoat()"*@ @(Model.boatPassengers.Any(p => p.GetType().Name == "Farmer") ? "" : "disabled")>Move Boat</button>
 
     <!-- West Bank -->
     <div class="bank-west">
