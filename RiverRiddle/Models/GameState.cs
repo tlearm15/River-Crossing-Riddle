@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace RiverRiddle.Models
@@ -29,10 +30,15 @@ namespace RiverRiddle.Models
             var passenger = GetCharacterByName(name);
             if (passenger == null) return;
 
+            // Use FirstOrDefault to reliably find the object reference 
+            // already on the boat, based on its Type.
+            var existingPassenger = boatPassengers.FirstOrDefault(p => p.GetType() == passenger.GetType());
+
             // Remove if already on the boat
-            if (boatPassengers.Contains(passenger))
+            if (existingPassenger != null)
             {
-                boatPassengers.Remove(passenger);
+                // Use the found, existing object reference for successful removal.
+                boatPassengers.Remove(existingPassenger);
                 return;
             }
 
