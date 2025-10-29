@@ -8,7 +8,7 @@ namespace RiverRiddle.Models
     public abstract class Character
     {
 
-        public string name { get; set; }
+        public string Name { get; set; }
         public RiverSide riverSide { get; set; }
 
 
