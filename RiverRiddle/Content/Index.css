@@ -98,10 +98,14 @@ th, td {
     position: relative;
     width: 1200px;
     height: 600px;
-    background-color: #cca7ba;
     border: 2px solid #270D1D;
     border-radius: 12px;
     box-shadow: 2px 2px 0 #270D1D;
+
+    background-image: url('../Images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 
@@ -129,7 +133,7 @@ th, td {
     line-height: 30px;
 }
 
-.game-box {
+/*.game-box {
     position: relative;
     width: 800px;
     height: 400px;
@@ -138,7 +142,7 @@ th, td {
     background-size: cover;
     background-position: center; 
     background-repeat: no-repeat;
-}
+}*/
 
 .bank {
     display: flex;
@@ -177,7 +181,7 @@ th, td {
     bottom: 50px;
     left: 400px;
     transition;
-    left 0.8s ease;
+/*    left: 0.8s ease;*/
     z-index: 1;
 }
 
@@ -204,6 +208,17 @@ th, td {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+
+    height:40px;
+    background-color: #cca7ba;
+    border: 2px solid #270D1D;
+    border-radius: 12px;
+    font-size: large;
+    font-weight: bold;
+
+    font-family: 'Courier New';
+    font-weight: bold;
+    color: #270D1D;
 }
 
 1
