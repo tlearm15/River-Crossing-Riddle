@@ -66,7 +66,7 @@ th, td {
 
 .river-bg {
     display: flex;
-    gap: 600px
+    gap: 380px
 }
 
 
@@ -146,8 +146,8 @@ th, td {
     gap: 10px;
     margin-top: 20px;
     padding-top: 380px;
-    max-width: 250px;
-    width: 250px
+    max-width: 500px;
+    width: 500px
 }
 
 
