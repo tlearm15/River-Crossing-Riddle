@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>PlayGame</title>
     <link rel="stylesheet" href="~/Content/Index.css" />
-    <!-- Including jQuery from a CDN -->
+    <!-- Including jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
@@ -58,13 +58,15 @@
     <script>
         function togglePassenger(name) {
             $.post('@Url.Action("TogglePassenger","Game")', { name: name }, function(data) {
-                $('#gameBox').html(data);
+                $('.game-box').html(data);
+
             });
         }
 
         function moveBoat() {
             $.post('@Url.Action("MoveBoat", "Game")', {}, function (data) {
-                $('#gameBox').html(data);
+                $('.game-box').html(data);
+
             });
         }
     </script>

@@ -179,17 +179,11 @@ th, td {
 .boat {
     position: absolute;
     bottom: 50px;
-    left: 400px;
-    transition;
-/*    left: 0.8s ease;*/
-    z-index: 1;
-}
 
-.boat-image {
-    width: 100%;
+    transition;
+    z-index: 1;
     width: 128px;
     height: 128px;
-    height: auto;
     display: block;
 }
 
@@ -197,7 +191,8 @@ th, td {
     left: 600px;
 }
 .boat.west{
-    left: 200px;
+    left: 400px;
+
 }
 
 .boat-btn {

@@ -10,7 +10,6 @@ namespace RiverRiddle.Controllers
 {
 
 
-
     public class GameController : Controller
     {
 
@@ -44,13 +43,15 @@ namespace RiverRiddle.Controllers
         // GET: Game
         public ActionResult PlayGame()
         {
-            var game = LoadGame();
+            GameState game = LoadGame();
             return View(game);
         }
 
         [HttpPost]
         public ActionResult TogglePassenger(string name)
         {
+            System.Diagnostics.Debug.WriteLine($"Session Exists: {Session[SessionKey] != null}");
+
             var game = LoadGame();
             game.TogglePassenger(name);
             SaveGame(game);
@@ -60,6 +61,8 @@ namespace RiverRiddle.Controllers
         [HttpPost]
         public ActionResult MoveBoat()
         {
+            System.Diagnostics.Debug.WriteLine($"Session Exists: {Session[SessionKey] != null}");
+
             var game = LoadGame();
             game.MoveBoat();
             SaveGame(game);

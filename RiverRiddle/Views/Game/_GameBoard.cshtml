@@ -1,19 +1,19 @@
 ﻿@model RiverRiddle.Models.GameState
-
+@using RiverRiddle.Models;
 <div class="river-bg">
 
     <!-- Boat -->
     <div class="boat @(Model.boatSide.ToString().ToLower())">
-        <img src="~/Images/boat.png" class="boat-image" alt="boat"/>
+        <img src="~/Images/boat.png" class="boat" alt="boat" />
         @{
-            RiverRiddle.Models.Character[] characters = new RiverRiddle.Models.Character[] { Model.Farmer, Model.Fox, Model.Chicken, Model.Corn };
+            Character[] characters = new Character[] { Model.Farmer, Model.Fox, Model.Chicken, Model.Corn };
         }
 
         @* Boat Passengers *@
         @foreach (var passenger in Model.boatPassengers)
         {
             <img src="~/Images/@(passenger.GetType().Name.ToLower()).png"
-                 class="character"
+                 class="character on-boat"
                  data-name="@passenger.GetType().Name"
                  onclick="togglePassenger('@passenger.GetType().Name')" />
         }
@@ -21,14 +21,16 @@
     </div>
 
     <button class="boat-btn" onclick="moveBoat()"
-            @(Model.boatPassengers.Any(p =>p is RiverRiddle.Models.Farmer) ? "" : "disabled")> Move Boat </button>
+            @(Model.boatPassengers.Any(p => p is Farmer) ? "" : "disabled")>
+        Move Boat
+    </button>
 
     <!-- West Bank -->
     <div class="bank-west">
         <div class="characters-row">
             @foreach (var c in characters)
             {
-                if (c.riverSide == RiverRiddle.Models.RiverSide.West && !Model.boatPassengers.Contains(c))
+                if (c.riverSide == RiverSide.West && !Model.boatPassengers.Contains(c))
                 {
                     <img src="~/Images/@(c.GetType().Name.ToLower()).png"
                          class="character"
@@ -44,7 +46,7 @@
         <div class="characters-row">
             @foreach (var c in characters)
             {
-                if (c.riverSide == RiverRiddle.Models.RiverSide.East && !Model.boatPassengers.Contains(c))
+                if (c.riverSide == RiverSide.East && !Model.boatPassengers.Contains(c))
                 {
                     <img src="~/Images/@(c.GetType().Name.ToLower()).png"
                          class="character"
