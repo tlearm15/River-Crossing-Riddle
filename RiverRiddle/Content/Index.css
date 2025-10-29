@@ -165,8 +165,8 @@ th, td {
     z-index: 2;
     border: 5px solid red !important;
 }
-/*
-.bank-west .character {
+
+/*.bank-west .character {
     left:50px;
     top:250px;
 }
@@ -177,11 +177,11 @@ th, td {
 }*/
 
 
-.bank {
+/*.bank {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-}
+}*/
 
 
 
@@ -196,11 +196,11 @@ th, td {
 }
 
 .boat.east{
-    left: 700px;
+    right: 400px;
 }
+
 .boat.west{
     left: 400px;
-
 }
 
 .boat-btn {

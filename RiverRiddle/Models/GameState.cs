@@ -89,9 +89,6 @@ namespace RiverRiddle.Models
                 }
             }
 
-            // Clear boat passengers after the move
-            boatPassengers.Clear();
-
         }
 
         private Character GetCharacterByName(string name)

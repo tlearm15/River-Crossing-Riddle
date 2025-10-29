@@ -1,13 +1,13 @@
 ﻿@model RiverRiddle.Models.GameState
 @using RiverRiddle.Models;
 <div class="river-bg">
-
+    @{
+        Character[] characters = new Character[] { Model.Farmer, Model.Fox, Model.Chicken, Model.Corn };
+    }
     <!-- Boat -->
     <div class="boat @(Model.boatSide.ToString().ToLower())">
         <img src="~/Images/boat.png" class="boat" alt="boat" />
-        @{
-            Character[] characters = new Character[] { Model.Farmer, Model.Fox, Model.Chicken, Model.Corn };
-        }
+
         <div class="boat-passengers">
             @* Boat Passengers *@
             @foreach (var passenger in Model.boatPassengers)
@@ -21,7 +21,7 @@
     </div>
 
 
-    <button class="boat-btn"onclick="moveBoat()"*@ @(Model.boatPassengers.Any(p => p.GetType().Name == "Farmer") ? "" : "disabled")>Move Boat</button>
+    <button class="boat-btn" onclick="moveBoat()" *@ @(Model.boatPassengers.Any(p => p.GetType().Name == "Farmer") ? "" : "disabled")>Move Boat</button>
 
     <!-- West Bank -->
     <div class="bank-west">
@@ -32,7 +32,7 @@
                 {
                     <img src="~/Images/@(c.GetType().Name.ToLower()).png"
                          class="character"
-                         data-name="@c.GetType().Name"
+                         @*data-name="@c.GetType().Name"*@
                          onclick="togglePassenger('@c.GetType().Name')" />
                 }
             }
@@ -48,7 +48,7 @@
                 {
                     <img src="~/Images/@(c.GetType().Name.ToLower()).png"
                          class="character"
-                         data-name="@c.GetType().Name"
+                         @*data-name="@c.GetType().Name"*@
                          onclick="togglePassenger('@c.GetType().Name')" />
                 }
             }
