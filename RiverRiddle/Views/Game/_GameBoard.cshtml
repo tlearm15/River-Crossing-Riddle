@@ -8,7 +8,7 @@
         @{
             Character[] characters = new Character[] { Model.Farmer, Model.Fox, Model.Chicken, Model.Corn };
         }
-
+    <div class="boat-passengers">
         @* Boat Passengers *@
         @foreach (var passenger in Model.boatPassengers)
         {
@@ -17,7 +17,7 @@
                  data-name="@passenger.GetType().Name"
                  onclick="togglePassenger('@passenger.GetType().Name')" />
         }
-
+    </div>
     </div>
 
     <button class="boat-btn" onclick="moveBoat()"
@@ -30,7 +30,7 @@
         <div class="characters-row">
             @foreach (var c in characters)
             {
-                if (c.riverSide == RiverSide.West && !Model.boatPassengers.Contains(c))
+                if (c.riverSide == RiverSide.West && !Model.boatPassengers.Any(p => p.GetType() == c.GetType()))
                 {
                     <img src="~/Images/@(c.GetType().Name.ToLower()).png"
                          class="character"
@@ -46,7 +46,7 @@
         <div class="characters-row">
             @foreach (var c in characters)
             {
-                if (c.riverSide == RiverSide.East && !Model.boatPassengers.Contains(c))
+                if (c.riverSide == RiverSide.East && !Model.boatPassengers.Any(p => p.GetType() == c.GetType()))
                 {
                     <img src="~/Images/@(c.GetType().Name.ToLower()).png"
                          class="character"
