@@ -102,23 +102,27 @@ namespace RiverRiddle.Models
             switch (this.MoveState)
             {
                 case MoveState.Valid:
-                    this.Status = "Move successful";
+                    this.Status = "Move Successful";
                     break;
+                    // successful move status message
                 case MoveState.Invalid:
 
                     bool foxEatChicken = (Fox.riverSide == Chicken.riverSide) && (Farmer.riverSide != Fox.riverSide);
                     if (foxEatChicken)
                     {
-                        this.Status = "The fox has eaten the chicken!";
+                        this.Status = "The Fox has eaten the Chicken!";
                     }
+                    // status message for if the fox has been left alone with the chicken
                     else
                     {
-                        this.Status = "The chicken has eaten the corn!";
+                        this.Status = "The Chicken has eaten the Corn!";
                     }
+                    // status message for if the chicken has been left alone with the corn
                     break;
                 case MoveState.Win:
                     this.Status = "Congratulations! You Win!";
                     break;
+                    // winning status message
             }
         }
 

@@ -28,6 +28,9 @@
                 <br>3. If the Fox is left alone with the Chicken, the Fox will eat the Chicken
                 <br>4. If the Chicken is left alone with the Corn, the Chicken will eat the Corn
             </p>
+
+            @* setting the texr of the left pannel flex box to display the rules for the user
+                this is in a class names left pannel for easier styling*@
         </section>
         <div class="middle-section">
             <section class="game-box">
@@ -35,8 +38,6 @@
                 @Html.Partial("_GameBoard", Model)
 
             </section>
-
-
 
             <section class="status-box">
 
@@ -52,8 +53,13 @@
                 <br>When you are happy with your choice click the Confirm Button
                 <br>This will send the Character(s)/Item across the River
             </p>
+
+            @* setting text in the right pannel flext box to display controls to the user for better usability of the website 
+                within the right pannel class for easier styling*@
         </section>
     </div>
+
+    @* the above section is in the game layout section, for easier styling *@
 
     <script>
 
@@ -118,8 +124,5 @@
         }
 
     </script>
-
-
-
 </body>
 </html>
