@@ -29,7 +29,8 @@ h2 {
 h3 {
     color: #270D1D;
     font-weight: bold;
-    text-align: center
+    text-align: center;
+    font-size: 150%
 }
 body > div {
     text-align: center;
@@ -54,24 +55,33 @@ table {
     width: 100%
 }
 
-th, td {
+td {
     border: 2px solid #270D1D;
     background-color: #cca7ba;
     border-collapse: collapse;
     table-layout: fixed;
     width: 50%;
-    font-size: larger;
+    font-size: 125%;
     font-weight: bold;
     line-height: 40px;
 }
-/*all of the above is css code for styling basic parts of the website such as different headers, tables and buttons used throughout the website*/
 
-
-
-.river-bg {
-    display: flex;
-    gap: 380px
+th {
+    border: 2px solid #270D1D;
+    background-color: #cca7ba;
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 50%;
+    font-size: 225%;
+    font-weight: bold;
+    line-height: 40px;
 }
+
+    /*all of the above is css code for styling basic parts of the website such as different headers, tables and buttons used throughout the website*/
+    .river-bg {
+        display: flex;
+        gap: 380px
+    }
 
 
 .game-layout {
@@ -98,7 +108,7 @@ th, td {
     border-radius: 12px;
     padding: 10px;
     box-shadow: 2px 2px 0 #270D1D;
-    font-size: 135%;
+    font-size: 125%;
     font-weight: bold;
     line-height: 30px;
 }
@@ -137,7 +147,7 @@ th, td {
     border-radius: 12px;
     padding: 10px;
     box-shadow: 2px 2px 0 #270D1D;
-    font-size: 135%;
+    font-size: 125%;
     font-weight: bold;
     line-height: 30px;
 }
@@ -208,7 +218,7 @@ th, td {
     padding: 10px 20px;
     cursor: pointer;
 
-    height:40px;
+    height:50px;
     background-color: #cca7ba;
     border: 2px solid #270D1D;
     border-radius: 12px;
@@ -227,7 +237,7 @@ th, td {
     padding: 10px 20px;
     cursor: pointer;
 
-    height: 40px;
+    height: 50px;
     background-color: #cca7ba;
     border: 2px solid #270D1D;
     border-radius: 12px;
