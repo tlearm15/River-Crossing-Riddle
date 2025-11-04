@@ -56,17 +56,24 @@
     </div>
 
     <script>
-        function togglePassenger(name) {
-            $.post('@Url.Action("TogglePassenger","Game")', { name: name }, function(data) {
+
+        function resetGame() {
+            $.post('@Url.Action("ResetGame", "Game")', {}, function (data) {
+
+                // reset the game board
                 $('.game-box').html(data);
 
+                // updates status box
                 updateStatus();
+
+                // re-enables boat button
+                $('.boat-btn').prop('disabled', false);
 
             });
         }
 
-        function moveBoat() {
-            $.post('@Url.Action("MoveBoat", "Game")', {}, function (data) {
+        function togglePassenger(name) {
+            $.post('@Url.Action("TogglePassenger","Game")', { name: name }, function(data) {
                 $('.game-box').html(data);
 
                 var state = updateStatus();
@@ -79,6 +86,24 @@
                     //disables boat button
                     $('.boat-btn').prop('disabled', true);
 
+                }
+            });
+        }
+
+        function moveBoat() {
+            $.post('@Url.Action("MoveBoat", "Game")', {}, function (data) {
+                $('.game-box').html(data);
+
+                var state = updateStatus();
+
+                //check is required on both, as only having one allows game to continue
+                if (state === 'Invalid' || state === 'Win') {
+
+                    //disables all character clicks
+                    $('.character').removeAttr('onclick');
+
+                    //disables boat button
+                    $('.boat-btn').prop('disabled', true);
                 }
             });
         }

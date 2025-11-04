@@ -68,5 +68,15 @@ namespace RiverRiddle.Controllers
             SaveGame(game);
             return PartialView("_GameBoard", game);
         }
+
+        [HttpPost]
+        public ActionResult ResetGame()
+        {
+            Session.Remove(SessionKey);
+
+            GameState game = LoadGame();
+            game.Status = "Game Reset";
+            return PartialView("_GameBoard",game);
+        }
     }
 }

@@ -41,6 +41,12 @@ namespace RiverRiddle.Models
             {
                 // Use the found, existing object reference for successful removal.
                 boatPassengers.Remove(existingPassenger);
+
+                this.MoveState = ValidateMove();
+                if (this.MoveState == MoveState.Win)
+                {
+                    this.Status = "Congratulations! You Win!";
+                }
                 return;
             }
 
@@ -133,7 +139,8 @@ namespace RiverRiddle.Models
             if (Farmer.riverSide == RiverSide.East &&
                 Fox.riverSide == RiverSide.East &&
                 Chicken.riverSide == RiverSide.East &&
-                Corn.riverSide == RiverSide.East)
+                Corn.riverSide == RiverSide.East &&
+                boatPassengers.Count == 0)
             {
                  return MoveState.Win;
             }
