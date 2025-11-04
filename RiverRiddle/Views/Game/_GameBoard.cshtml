@@ -23,6 +23,7 @@
 
     <button class="boat-btn" onclick="moveBoat()" *@ @(Model.boatPassengers.Any(p => p.GetType().Name == "Farmer") ? "" : "disabled")>Move Boat</button>
     <button class="reset-btn" onclick="resetGame()">Reset Game</button>
+
     <!-- West Bank -->
     <div class="bank-west">
         <div class="characters-row">

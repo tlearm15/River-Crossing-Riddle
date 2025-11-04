@@ -49,6 +49,7 @@ body > div {
     cursor: pointer;
     font-size: larger
 }
+
 table {
     width: 100%
 }
@@ -63,6 +64,9 @@ th, td {
     font-weight: bold;
     line-height: 40px;
 }
+/*all of the above is css code for styling basic parts of the website such as different headers, tables and buttons used throughout the website*/
+
+
 
 .river-bg {
     display: flex;
@@ -94,7 +98,7 @@ th, td {
     border-radius: 12px;
     padding: 10px;
     box-shadow: 2px 2px 0 #270D1D;
-    font-size: large;
+    font-size: 135%;
     font-weight: bold;
     line-height: 30px;
 }
@@ -115,13 +119,14 @@ th, td {
 
 .status-box {
     width: 1200px;
-    height: 50px;
+    height: 60px;
     background-color: #cca7ba;
     border: 2px solid #270D1D;
     border-radius: 12px;
     box-shadow: 2px 2px 0 #270D1D;
-    font-size: large;
+    font-size: 150%;
     font-weight: bold;
+    padding-bottom: 10px;
 }
 
 .right-pannel {
@@ -132,10 +137,15 @@ th, td {
     border-radius: 12px;
     padding: 10px;
     box-shadow: 2px 2px 0 #270D1D;
-    font-size: large;
+    font-size: 135%;
     font-weight: bold;
     line-height: 30px;
 }
+
+/*css code for using flex boxes on the game page to create a organised look to the website
+    including a lot of repositioning as well as basic formating of colours and fonts
+*/
+
 
 .characters-row {
     display: flex;
@@ -146,7 +156,6 @@ th, td {
     max-width: 500px;
     width: 500px
 }
-
 
 .boat-passengers {
     display: flex;
@@ -159,7 +168,6 @@ th, td {
     left: 0;
     bottom: 20px;
     z-index: 2;
-    border: 5px solid red !important;
 }
 
 .character {
@@ -168,9 +176,10 @@ th, td {
     cursor: pointer;
     transition: all 0.4s ease;
     z-index: 2;
-    border: 5px solid red !important;
 }
 
+/*css styling code for the characters, such as making the cursor change look so the user can tell easier that it is clickable, setting the position of the characters
+*/
 .boat {
     position: absolute;
     bottom: 50px;
@@ -189,25 +198,46 @@ th, td {
     left: 400px;
 }
 
+/*css code for the boats positions and configuring east and west*/
+
 .boat-btn {
     position: absolute;
     bottom: 10px;
-    left: 50%;
+    left: 40%;
     transform: translateX(-50%);
     padding: 10px 20px;
-    font-size: 16px;
     cursor: pointer;
 
     height:40px;
     background-color: #cca7ba;
     border: 2px solid #270D1D;
     border-radius: 12px;
+
     font-size: large;
     font-weight: bold;
+    font-family: 'Courier New';
+    font-weight: bold;
+    color: #270D1D;
+}
+.reset-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 60%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    cursor: pointer;
 
+    height: 40px;
+    background-color: #cca7ba;
+    border: 2px solid #270D1D;
+    border-radius: 12px;
+
+    font-size: large;
+    font-weight: bold;
     font-family: 'Courier New';
     font-weight: bold;
     color: #270D1D;
 }
 
+/*css styling code for both the moving boat button and the reset button, setting their position, size and formating the font*/
 

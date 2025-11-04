@@ -20,15 +20,17 @@
             <tr>
                 <th><p>Rules</p></th>
                 <th><p>Controls</p></th>
+                @* creating 2 headings to be displayed in the table *@
             </tr>
             <tr>
                 <td>
                          A Farmer with their Fox, Chicken and bag of Corn come to the east side of a River they wish to cross.
-                        <br>Luckily there is a bot at the Rivers edge, but of course only the Farmer can row
+                        <br>Luckily there is a boat at the Rivers edge, but of course only the Farmer can row
                         <br>The Boat can carry TWO things, including the rower, at any one time.
                         <br>If the Fox is left alone with the Chicken, the Fox will eat the Chicken.
                         <br>If the Chicken is left alone with the Corn, the Chicken will eat the Corn.
                         <br>How can the Farmer cross the River so that all FOUR arrive safely on the other side?
+                    @* displaying the rules to the user *@
                 </td>
                 <td>
                         Click on the Character/Item you wish to select to put onto the Boat
@@ -38,6 +40,7 @@
                         <br />You may place a maximum of TWO Characters/Item on the Boat at any given time
                         <br />When you are happy with your choice click the Confirm Button
                         <br />This will send the Character(s)/Item across the River
+                    @* displaying the controls for the user *@
                 </td>
             </tr>
         </table>
@@ -45,6 +48,7 @@
             <a href='@Url.Action("PlayGame", "Game")'>
                 <input type="button" value="START" class="btn btn-lg" />
             </a>
+            @* a button that takes the user to the playgame view within the game controller *@
         </div>
     </div>
 </body>
