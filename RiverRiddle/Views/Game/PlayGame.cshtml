@@ -40,7 +40,7 @@
 
             <section class="status-box">
 
-                <p>STATUS MESSAGE WILL GO HERE AND WILL BE ABOUT THIS LONG</p>
+                <p>@Model.Status</p>
 
             </section>
         </div>
@@ -60,6 +60,8 @@
             $.post('@Url.Action("TogglePassenger","Game")', { name: name }, function(data) {
                 $('.game-box').html(data);
 
+                updateStatus();
+
             });
         }
 
@@ -67,7 +69,27 @@
             $.post('@Url.Action("MoveBoat", "Game")', {}, function (data) {
                 $('.game-box').html(data);
 
+                var state = updateStatus();
+
+                if (state === 'Invalid' || state === 'Win') {
+
+                    //disables all character clicks
+                    $('.character').removeAttr('onclick');
+
+                    //disables boat button
+                    $('.boat-btn').prop('disabled', true);
+
+                }
             });
+        }
+
+        function updateStatus() {
+            var statusData = $('#status-data');
+            var message = statusData.data('message');
+            var state = statusData.data('state');
+            $('.status-box p').text(message);
+            $('#status-data').remove();
+            return state;
         }
 
     </script>

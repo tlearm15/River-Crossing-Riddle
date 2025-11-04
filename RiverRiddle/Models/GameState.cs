@@ -11,6 +11,8 @@ namespace RiverRiddle.Models
         public Fox Fox { get; set; }
         public Chicken Chicken { get; set; }
         public Corn Corn { get; set; }
+        public MoveState MoveState { get; set; } = MoveState.Valid;
+        public string Status { get; set; } = "Game Started!";
 
         public RiverSide boatSide { get; set; } = RiverSide.West;
         public List<Character> boatPassengers { get; set; } = new List<Character>();
@@ -59,12 +61,11 @@ namespace RiverRiddle.Models
             if (!boatPassengers.Any(p => p.GetType().Name == "Farmer"))
             {
                 // Farmer must be on the boat to move it
+                this.Status = "The farmer must be on the boat to move it.";
                 return;
             }
 
             // Move boat to the other side (flip)
-            //boatSide = boatSide == RiverSide.West ? RiverSide.East : RiverSide.West;
-
             RiverSide newSide = boatSide == RiverSide.West ? RiverSide.East : RiverSide.West;
             boatSide = newSide;
 
@@ -87,8 +88,57 @@ namespace RiverRiddle.Models
                 {
                     this.Corn.riverSide = newSide;
                 }
+
+               
+            }
+            this.MoveState = ValidateMove();
+
+            switch (this.MoveState)
+            {
+                case MoveState.Valid:
+                    this.Status = "Move successful";
+                    break;
+                case MoveState.Invalid:
+
+                    bool foxEatChicken = (Fox.riverSide == Chicken.riverSide) && (Farmer.riverSide != Fox.riverSide);
+                    if (foxEatChicken)
+                    {
+                        this.Status = "The fox has eaten the chicken!";
+                    }
+                    else
+                    {
+                        this.Status = "The chicken has eaten the corn!";
+                    }
+                    break;
+                case MoveState.Win:
+                    this.Status = "Congratulations! You Win!";
+                    break;
+            }
+        }
+
+        private MoveState ValidateMove()
+        {
+            //Fox eats chicken if on same side as chicken without farmer
+            bool foxEatChicken = (Fox.riverSide == Chicken.riverSide) && (Farmer.riverSide != Fox.riverSide);
+
+            //Chicken eats corn if on same side as corn without farmer
+            bool chickenEatCorn = (Chicken.riverSide == Corn.riverSide) && (Farmer.riverSide != Chicken.riverSide);
+
+            if (foxEatChicken || chickenEatCorn)
+            {
+                return MoveState.Invalid;
             }
 
+            //Check for win condition (everyone on east side)
+            if (Farmer.riverSide == RiverSide.East &&
+                Fox.riverSide == RiverSide.East &&
+                Chicken.riverSide == RiverSide.East &&
+                Corn.riverSide == RiverSide.East)
+            {
+                 return MoveState.Win;
+            }
+
+            return MoveState.Valid;
         }
 
         private Character GetCharacterByName(string name)
