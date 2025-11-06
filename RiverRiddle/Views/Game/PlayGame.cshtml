@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>PlayGame</title>
     <link rel="stylesheet" href="~/Content/Index.css" />
-    <!-- Including jQuery-->
+    <!-- Including jQuery to update parts of page easier-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
@@ -67,7 +67,7 @@
 
     @* the above section is in the game layout section, for easier styling *@
 
-    <script>
+<script>
 
         function resetGame() {
             $.post('@Url.Action("ResetGame", "Game")', {}, function (data) {
@@ -121,14 +121,19 @@
         }
 
         function updateStatus() {
+            // gets the status message and state from the hidden div
             var statusData = $('#status-data');
+            //sets message and state variables using hidden data
             var message = statusData.data('message');
             var state = statusData.data('state');
+            // updates the status box with the new message
             $('.status-box p').text(message);
+            // removes the hidden div to preent duplication
             $('#status-data').remove();
+            // returns the state for further use (disable button/clicks)
             return state;
         }
 
-    </script>
+</script>
 </body>
 </html>

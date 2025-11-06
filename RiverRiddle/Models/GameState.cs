@@ -97,6 +97,7 @@ namespace RiverRiddle.Models
 
                
             }
+            //validates the move after updating positions to check for win/loss conditions
             this.MoveState = ValidateMove();
 
             switch (this.MoveState)
@@ -152,6 +153,7 @@ namespace RiverRiddle.Models
             return MoveState.Valid;
         }
 
+        //Helper method to get characters object from name
         private Character GetCharacterByName(string name)
         {
             switch (name.ToLower())
